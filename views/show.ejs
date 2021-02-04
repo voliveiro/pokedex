@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <header>
+        <h1> <%=item.name%> </h1>
+    </header>
+
+    <main class="show-main"> 
+
+        <div class="show-image-section"> 
+            <img class="show-img" src="<%=item.img%>">
+            <%const indexNo=data.indexOf(item)%>
+            <div class="show-form"> 
+
+                <form action="/index/<%=indexNo %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete from Pokedex"/>
+                </form>
+                
+                <a href="/index/<%=indexNo%>/editName">
+                    <button> Rename your pokemon</button>
+                </a>
+            </div>
+        </div>
+
+        <section>
+
+            <h2> Stats</h2>
+            <ul> 
+                <%for (const [key, value] of Object.entries(item.stats)) {%>
+                    <li class="show-li"> 
+                        <p> <span class="item-key"> <%=key%>: </span> <%=value%> </p>
+                    </li>
+                <%}%>
+                </ul> 
+
+            <h2> Damages </h2>
+            <ul> 
+            <%for (const [key, value] of Object.entries(item.damages)) {%>
+                <li class="show-li"> 
+                    <p> <span class="item-key"> <%=key%>: </span> <%=value%> </p>
+                </li>
+            <%}%>
+            </ul> 
+
+           
+        </section>
+
+
+    </main>
+    
+</body>
+</html>

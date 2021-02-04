@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+<body>
+    
+    <header>
+        <h1> Pokedex </h1>
+        <h4> <em> Rename Your Pokemon</em></h4>
+    </header>
+
+    <main> 
+
+
+        <form action="/index/<%=indexNo%>?_method=PUT" method="POST"> 
+            <label for="name"> Name</label>
+            <input type="text" name="name" id="name"/> 
+
+            <input type="submit" value="submit"> 
+        
+        </form>
+    </main>
+</body>
+</html>

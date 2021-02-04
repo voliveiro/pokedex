@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <header>
+        <h1> Pokedex </h1>
+        <h4> <em> Click on a Pokemon to find out more!</em></h4>
+    </header>
+
+    <main> 
+    
+    <ul class="index-page-ul"> 
+    <%data.forEach(element=> {%>
+        <%const elementIndex = data.indexOf(element)%>
+        <li class="index-page-li"> 
+            <p> <%=element.name%> </p>
+            <a href="/index/<%=elementIndex%>"> 
+            <img class="index-img" src="<%=element.img%>"> 
+            </a>
+
+
+        </li>
+
+    <%})%>
+    </ul>
+    
+    </main>
+
+    <section> 
+        <a href="/new"> Add New Pokemon</a>
+    </section>
+</body>
+</html>
